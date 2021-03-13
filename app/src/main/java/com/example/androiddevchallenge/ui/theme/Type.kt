@@ -17,27 +17,58 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.toFontFamily
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.R
+
+private val boldFont = Font(R.font.nunitosans_bold).toFontFamily()
+private val lightFont = Font(R.font.nunitosans_light).toFontFamily()
+private val semiBoldFont = Font(R.font.nunitosans_semibold).toFontFamily()
 
 // Set of Material typography styles to start with
-val typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
+val typographyForBloom = Typography(
+    h1 = TextStyle(
+        fontFamily = boldFont,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
-        /* Other default text styles to override
+        fontSize = 18.sp,
+        letterSpacing = 0.sp,
+    ),
+    h2 = TextStyle(
+        fontFamily = boldFont,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        letterSpacing = .15.sp,
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = lightFont,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        letterSpacing = 0.sp,
+    ),
+    body1 = TextStyle(
+        fontFamily = lightFont,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        letterSpacing = 0.sp,
+    ),
+    body2 = TextStyle(
+        fontFamily = lightFont,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        letterSpacing = 0.sp,
+    ),
     button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+        fontFamily = semiBoldFont,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        letterSpacing = 1.sp,
     ),
     caption = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = semiBoldFont,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
+        fontSize = 12.sp,
+        letterSpacing = 0.sp,
+    ),
 )
