@@ -16,7 +16,6 @@
 package com.example.androiddevchallenge.ui.widget
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -70,7 +69,7 @@ fun CoilImage(
         modifier = modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center,
 
-        ) {
+    ) {
         when (state) {
             is NetworkImageState.Loading -> {
                 if (loading != null) {

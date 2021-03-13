@@ -40,7 +40,6 @@ import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
@@ -78,8 +77,7 @@ val gardenDatas = listOf(
     PlantEntity(name = "Snake plant", url = R.drawable.img_snake_plant),
     PlantEntity(name = "Pothos", url = R.drawable.img_pothos),
 
-    )
-
+)
 
 @Composable
 fun HomePiece() {
@@ -328,4 +326,3 @@ fun DarkPreviewHomeScreen() {
         HomePiece()
     }
 }
-

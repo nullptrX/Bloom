@@ -70,27 +70,23 @@ fun BloomApp(window: Window? = null) {
         navigationBarColor = MaterialTheme.colors.primary
     }
     window?.also {
-
-        it.statusBarColor = statusBarColor.toArgb()
-        it.navigationBarColor = navigationBarColor.toArgb()
-
-        @Suppress("DEPRECATION")
+        window.statusBarColor = statusBarColor.toArgb()
+        window.navigationBarColor = navigationBarColor.toArgb()
         if (statusBarColor.luminance() > 0.5f) {
-            it.decorView.systemUiVisibility = it.decorView.systemUiVisibility or
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                it.decorView.systemUiVisibility = it.decorView.systemUiVisibility or
-                        View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
+                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
             }
         } else {
-            it.decorView.systemUiVisibility = it.decorView.systemUiVisibility and
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+            window.decorView.systemUiVisibility = window.decorView.systemUiVisibility and
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                it.decorView.systemUiVisibility = it.decorView.systemUiVisibility and
-                        View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
+                window.decorView.systemUiVisibility = window.decorView.systemUiVisibility and
+                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
             }
         }
-
     }
     Surface(color = MaterialTheme.colors.surface) {
 

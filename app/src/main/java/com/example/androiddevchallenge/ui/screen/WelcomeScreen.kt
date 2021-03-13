@@ -16,12 +16,8 @@
 package com.example.androiddevchallenge.ui.screen
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.Indication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.indication
-import androidx.compose.foundation.interaction.InteractionSource
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -33,18 +29,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.ButtonElevation
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ChangeCircle
-import androidx.compose.material.icons.filled.PanTool
-import androidx.compose.material.icons.filled.Style
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -59,10 +49,7 @@ import com.example.androiddevchallenge.common.Screen
 import com.example.androiddevchallenge.ui.model.BloomModel
 import com.example.androiddevchallenge.ui.model.bloomViewModel
 import com.example.androiddevchallenge.ui.theme.BloomTheme
-import com.example.androiddevchallenge.ui.theme.gray
-import com.example.androiddevchallenge.ui.theme.pink100
 import com.example.androiddevchallenge.ui.theme.shapes
-import com.example.androiddevchallenge.ui.theme.white
 
 @Composable
 fun WelcomeScreen() {

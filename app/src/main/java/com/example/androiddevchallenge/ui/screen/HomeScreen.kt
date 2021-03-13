@@ -29,10 +29,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.androiddevchallenge.R
-import com.example.androiddevchallenge.entity.PlantEntity
-import com.example.androiddevchallenge.ui.model.BloomModel
 import com.example.androiddevchallenge.ui.screen.home.HomePiece
 import com.example.androiddevchallenge.ui.theme.BloomTheme
 import com.example.androiddevchallenge.ui.widget.BottomBar
@@ -73,7 +69,6 @@ fun HomeScreen() {
     }
 }
 
-
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreviewHomeScreen() {
@@ -81,7 +76,6 @@ fun LightPreviewHomeScreen() {
         HomeScreen()
     }
 }
-
 
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
