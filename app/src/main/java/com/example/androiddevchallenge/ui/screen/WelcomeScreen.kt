@@ -16,8 +16,12 @@
 package com.example.androiddevchallenge.ui.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.Indication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.indication
+import androidx.compose.foundation.interaction.InteractionSource
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -28,13 +32,24 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ButtonElevation
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ChangeCircle
+import androidx.compose.material.icons.filled.PanTool
+import androidx.compose.material.icons.filled.Style
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,7 +59,10 @@ import com.example.androiddevchallenge.common.Screen
 import com.example.androiddevchallenge.ui.model.BloomModel
 import com.example.androiddevchallenge.ui.model.bloomViewModel
 import com.example.androiddevchallenge.ui.theme.BloomTheme
+import com.example.androiddevchallenge.ui.theme.gray
+import com.example.androiddevchallenge.ui.theme.pink100
 import com.example.androiddevchallenge.ui.theme.shapes
+import com.example.androiddevchallenge.ui.theme.white
 
 @Composable
 fun WelcomeScreen() {
@@ -82,6 +100,21 @@ private fun ContentTop(model: BloomModel) {
     val modifier = Modifier
         .fillMaxWidth()
     Column(modifier = modifier) {
+        Image(
+            modifier = Modifier
+                .wrapContentSize()
+                .padding(16.dp)
+                .align(Alignment.End)
+                .clickable {
+                    if (BloomTheme.Theme.Light == model.theme) {
+                        model.theme = BloomTheme.Theme.Dark
+                    } else {
+                        model.theme = BloomTheme.Theme.Light
+                    }
+                },
+            imageVector = Icons.Default.ChangeCircle, contentDescription = "",
+            colorFilter = ColorFilter.tint(BloomTheme.colors.buttonBackground),
+        )
         Spacer(modifier = Modifier.height(72.dp))
         Image(
             modifier = Modifier
@@ -136,18 +169,27 @@ private fun ContentTop(model: BloomModel) {
             )
         }
         Spacer(modifier = Modifier.height(32.dp))
-        Text(
+        Button(
             modifier = Modifier
+                .fillMaxWidth()
                 .height(48.dp)
-                .align(Alignment.CenterHorizontally)
-                .padding(horizontal = 16.dp)
-                .clickable {
-                    model.push(Screen.login)
-                },
-            text = "Log in",
-            style = MaterialTheme.typography.button,
-            color = BloomTheme.colors.buttonText2,
-        )
+                .padding(horizontal = 16.dp),
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = Color.Transparent,
+                contentColor = Color.Transparent,
+            ),
+            elevation = ButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 0.dp),
+            shape = shapes.large,
+            onClick = {
+                model.push(Screen.login)
+            },
+        ) {
+            Text(
+                text = "Log in",
+                style = MaterialTheme.typography.button,
+                color = BloomTheme.colors.buttonText2,
+            )
+        }
     }
 }
 

@@ -80,7 +80,6 @@ val gardenDatas = listOf(
 
     )
 
-val done = Icons.Default.Done
 
 @Composable
 fun HomePiece() {

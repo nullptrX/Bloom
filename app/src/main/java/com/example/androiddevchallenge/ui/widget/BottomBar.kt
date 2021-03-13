@@ -32,6 +32,8 @@ import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -59,7 +61,7 @@ fun BottomBar(data: List<BottomBarData>, index: Int, onChanged: (Int) -> Unit) {
             BottomItem(
                 modifier = Modifier
                     .weight(1f)
-                    .clickable { onChanged(0) },
+                    .clickable { onChanged(i) },
                 title = bottomBarData.title,
                 vector = bottomBarData.iconId,
                 tint = if (index == i) BloomTheme.colors.caption else tint,
@@ -99,7 +101,7 @@ fun LightPreviewBottomBar() {
                 BottomBarData("Profile", accountCircle),
                 BottomBarData("Cart", shoppingCart),
 
-            ),
+                ),
             index = 0,
             onChanged = {
             }
@@ -122,7 +124,7 @@ fun DarkPreviewBottomBar() {
                 BottomBarData("Profile", accountCircle),
                 BottomBarData("Cart", shoppingCart),
 
-            ),
+                ),
             index = 0,
             onChanged = {
             }

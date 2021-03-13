@@ -20,11 +20,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.androiddevchallenge.common.Screen
+import com.example.androiddevchallenge.ui.theme.BloomTheme
 
 class BloomModel : ViewModel() {
     companion object {
-        private val screenInit = Screen.home
+        private val screenInit = Screen.welcome
     }
+
+    var theme by mutableStateOf(BloomTheme.Theme.Light)
 
     var screen by mutableStateOf(screenInit)
         private set

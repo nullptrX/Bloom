@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BloomTheme {
+            val model = viewModel<BloomModel>()
+            BloomTheme(model.theme) {
                 BloomApp(window)
             }
         }
@@ -76,15 +77,20 @@ fun BloomApp(window: Window? = null) {
         @Suppress("DEPRECATION")
         if (statusBarColor.luminance() > 0.5f) {
             it.decorView.systemUiVisibility = it.decorView.systemUiVisibility or
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        }
-        @Suppress("DEPRECATION")
-        if (statusBarColor.luminance() > 0.5f) {
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 it.decorView.systemUiVisibility = it.decorView.systemUiVisibility or
-                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                        View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            }
+        } else {
+            it.decorView.systemUiVisibility = it.decorView.systemUiVisibility and
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                it.decorView.systemUiVisibility = it.decorView.systemUiVisibility and
+                        View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
             }
         }
+
     }
     Surface(color = MaterialTheme.colors.surface) {
 

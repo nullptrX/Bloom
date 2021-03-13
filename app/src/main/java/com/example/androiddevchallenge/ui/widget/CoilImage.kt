@@ -32,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
@@ -47,7 +48,7 @@ private sealed class NetworkImageState {
     object Loading : NetworkImageState()
 
     data class Loaded(
-        val image: Bitmap
+        val image: ImageBitmap
     ) : NetworkImageState()
 
     object LoadError : NetworkImageState()
@@ -69,7 +70,7 @@ fun CoilImage(
         modifier = modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center,
 
-    ) {
+        ) {
         when (state) {
             is NetworkImageState.Loading -> {
                 if (loading != null) {
@@ -88,7 +89,7 @@ fun CoilImage(
             }
             is NetworkImageState.Loaded -> {
                 Image(
-                    bitmap = state.image.asImageBitmap(),
+                    bitmap = state.image,
                     contentScale = contentScale,
                     contentDescription = contentDescription,
                     modifier = Modifier
@@ -137,7 +138,7 @@ private fun loadImage(
                 }
             ) { drawable ->
                 // Handle the result.
-                val bitmap = (drawable as BitmapDrawable).bitmap
+                val bitmap = (drawable as BitmapDrawable).bitmap.asImageBitmap()
                 state = NetworkImageState.Loaded(bitmap)
             }
             .build()
