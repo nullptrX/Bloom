@@ -78,7 +78,7 @@ val gardenDatas = listOf(
     PlantEntity(name = "Snake plant", url = R.drawable.img_snake_plant),
     PlantEntity(name = "Pothos", url = R.drawable.img_pothos),
 
-)
+    )
 
 val done = Icons.Default.Done
 
@@ -321,3 +321,12 @@ fun LightPreviewHomeScreen() {
         HomePiece()
     }
 }
+
+@Preview("Dark Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun DarkPreviewHomeScreen() {
+    BloomTheme(BloomTheme.Theme.Dark) {
+        HomePiece()
+    }
+}
+
