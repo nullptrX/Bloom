@@ -27,4 +27,3 @@ val green300 = Color(0xFFB8C9B8)
 val green900 = Color(0xFF2D3B2D)
 val black = Color(0xFFFFFFFF)
 val tint = Color(0xFF7A7676)
-

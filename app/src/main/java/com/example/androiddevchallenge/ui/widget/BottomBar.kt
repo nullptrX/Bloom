@@ -15,7 +15,6 @@
  */
 package com.example.androiddevchallenge.ui.widget
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -39,7 +38,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.ui.theme.BloomTheme
 import com.example.androiddevchallenge.ui.theme.tint
 
@@ -67,7 +65,6 @@ fun BottomBar(data: List<BottomBarData>, index: Int, onChanged: (Int) -> Unit) {
                 tint = if (index == i) BloomTheme.colors.caption else tint,
             )
         }
-
     }
 }
 
@@ -95,15 +92,18 @@ fun LightPreviewBottomBar() {
         val favoriteBorder = Icons.Default.FavoriteBorder
         val accountCircle = Icons.Default.AccountCircle
         val shoppingCart = Icons.Default.ShoppingCart
-        BottomBar(data = listOf(
-            BottomBarData("Home", home),
-            BottomBarData("Favorites", favoriteBorder),
-            BottomBarData("Profile", accountCircle),
-            BottomBarData("Cart", shoppingCart),
+        BottomBar(
+            data = listOf(
+                BottomBarData("Home", home),
+                BottomBarData("Favorites", favoriteBorder),
+                BottomBarData("Profile", accountCircle),
+                BottomBarData("Cart", shoppingCart),
 
-            ), index = 0, onChanged = {
-
-        })
+            ),
+            index = 0,
+            onChanged = {
+            }
+        )
     }
 }
 
@@ -115,14 +115,17 @@ fun DarkPreviewBottomBar() {
         val favoriteBorder = Icons.Default.FavoriteBorder
         val accountCircle = Icons.Default.AccountCircle
         val shoppingCart = Icons.Default.ShoppingCart
-        BottomBar(data = listOf(
-            BottomBarData("Home", home),
-            BottomBarData("Favorites", favoriteBorder),
-            BottomBarData("Profile", accountCircle),
-            BottomBarData("Cart", shoppingCart),
+        BottomBar(
+            data = listOf(
+                BottomBarData("Home", home),
+                BottomBarData("Favorites", favoriteBorder),
+                BottomBarData("Profile", accountCircle),
+                BottomBarData("Cart", shoppingCart),
 
-            ), index = 0, onChanged = {
-
-        })
+            ),
+            index = 0,
+            onChanged = {
+            }
+        )
     }
 }

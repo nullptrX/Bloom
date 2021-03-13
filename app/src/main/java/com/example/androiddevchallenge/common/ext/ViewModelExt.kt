@@ -15,13 +15,9 @@
  */
 package com.example.androiddevchallenge.common.ext
 
-import android.app.Application
-import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory
 
 inline fun <reified T : ViewModel> fixedViewModel(): T {
     return ViewModelProvider.NewInstanceFactory().create(T::class.java)
 }
-

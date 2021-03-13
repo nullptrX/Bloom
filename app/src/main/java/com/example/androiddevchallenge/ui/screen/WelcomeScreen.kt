@@ -29,7 +29,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.ButtonElevation
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -45,9 +44,7 @@ import com.example.androiddevchallenge.common.Screen
 import com.example.androiddevchallenge.ui.model.BloomModel
 import com.example.androiddevchallenge.ui.model.bloomViewModel
 import com.example.androiddevchallenge.ui.theme.BloomTheme
-import com.example.androiddevchallenge.ui.theme.Elevations
 import com.example.androiddevchallenge.ui.theme.shapes
-
 
 @Composable
 fun WelcomeScreen() {
@@ -130,7 +127,6 @@ private fun ContentTop(model: BloomModel) {
             elevation = ButtonDefaults.elevation(defaultElevation = 8.dp),
             shape = shapes.large,
             onClick = {
-
             },
         ) {
             Text(

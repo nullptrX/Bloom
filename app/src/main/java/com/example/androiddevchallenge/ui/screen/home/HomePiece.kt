@@ -23,15 +23,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -65,7 +62,6 @@ import com.example.androiddevchallenge.ui.theme.BloomTheme
 import com.example.androiddevchallenge.ui.theme.elevations
 import com.example.androiddevchallenge.ui.widget.CoilImage
 
-
 val themeDatas = listOf(
     PlantEntity(name = "Desert chic", url = R.drawable.img_desert_chic),
     PlantEntity(name = "Tiny terrariums", url = R.drawable.img_tiny_terrariums),
@@ -82,8 +78,7 @@ val gardenDatas = listOf(
     PlantEntity(name = "Snake plant", url = R.drawable.img_snake_plant),
     PlantEntity(name = "Pothos", url = R.drawable.img_pothos),
 
-    )
-
+)
 
 val done = Icons.Default.Done
 
@@ -99,7 +94,6 @@ fun HomePiece() {
         ContentCenter()
         ContentBottom()
     }
-
 }
 
 @Composable
@@ -129,10 +123,11 @@ private fun ContentTop() {
         ),
 
         singleLine = true,
-        value = search, onValueChange = {
+        value = search,
+        onValueChange = {
             search = it
-        })
-
+        }
+    )
 }
 
 @Composable
@@ -159,7 +154,6 @@ private fun ContentCenter() {
             }
         }
     }
-
 }
 
 @Composable
@@ -204,10 +198,8 @@ private fun ThemeItem(entity: PlantEntity) {
                 )
             }
         }
-
     }
 }
-
 
 @Composable
 private fun ContentBottom() {
@@ -230,7 +222,6 @@ private fun ContentBottom() {
             imageVector = filterList,
             contentDescription = "",
         )
-
     }
     Spacer(modifier = Modifier.height(8.dp))
 
@@ -320,10 +311,8 @@ private fun GardenItem(
             checked = checked,
             onCheckedChange = onCheckedChange,
         )
-
     }
 }
-
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable

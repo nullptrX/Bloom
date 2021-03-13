@@ -16,7 +16,6 @@
 package com.example.androiddevchallenge.ui.widget
 
 import android.content.Context
-import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import androidx.compose.foundation.Image
@@ -37,7 +36,6 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
-import androidx.core.graphics.drawable.toBitmap
 import coil.ImageLoader
 import coil.request.ImageRequest
 
@@ -53,9 +51,7 @@ private sealed class NetworkImageState {
     ) : NetworkImageState()
 
     object LoadError : NetworkImageState()
-
 }
-
 
 @Composable
 fun CoilImage(
@@ -73,7 +69,7 @@ fun CoilImage(
         modifier = modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center,
 
-        ) {
+    ) {
         when (state) {
             is NetworkImageState.Loading -> {
                 if (loading != null) {
@@ -116,7 +112,6 @@ fun CoilImage(
     }
 }
 
-
 @Composable
 private fun loadImage(
     context: Context,
@@ -136,9 +131,11 @@ private fun loadImage(
         val request = ImageRequest.Builder(context)
             .data(data)
             .apply(builder)
-            .target(onError = {
-                state = NetworkImageState.LoadError
-            }) { drawable ->
+            .target(
+                onError = {
+                    state = NetworkImageState.LoadError
+                }
+            ) { drawable ->
                 // Handle the result.
                 val bitmap = (drawable as BitmapDrawable).bitmap
                 state = NetworkImageState.Loaded(bitmap)

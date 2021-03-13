@@ -95,9 +95,11 @@ private fun Content(model: BloomModel) {
                 keyboardType = KeyboardType.Email,
                 imeAction = ImeAction.Next,
             ),
-            value = email, onValueChange = {
+            value = email,
+            onValueChange = {
                 email = it
-            })
+            }
+        )
         Spacer(modifier = Modifier.height(8.dp))
         OutlinedTextField(
             modifier = Modifier
@@ -117,9 +119,11 @@ private fun Content(model: BloomModel) {
             ),
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
-            value = password, onValueChange = {
+            value = password,
+            onValueChange = {
                 password = it
-            })
+            }
+        )
         val terms = "Terms of Use"
         val policy = "Privacy Policy"
         val hint = """
@@ -171,7 +175,6 @@ private fun Content(model: BloomModel) {
     }
 }
 
-
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreViewLoginScreen() {
@@ -180,7 +183,6 @@ fun LightPreViewLoginScreen() {
     }
 }
 
-
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun DarkPreViewLoginScreen() {
@@ -188,4 +190,3 @@ fun DarkPreViewLoginScreen() {
         Content(model = fixedViewModel())
     }
 }
-

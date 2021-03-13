@@ -40,7 +40,6 @@ import com.example.androiddevchallenge.ui.widget.BottomBarData
 import com.example.androiddevchallenge.ui.widget.Pager
 import com.example.androiddevchallenge.ui.widget.PagerState
 
-
 val themeDatas = listOf(
     PlantEntity(name = "Desert chic", url = R.drawable.img_desert_chic),
     PlantEntity(name = "Tiny terrariums", url = R.drawable.img_tiny_terrariums),
@@ -57,7 +56,7 @@ val gardenDatas = listOf(
     PlantEntity(name = "Snake plant", url = R.drawable.img_snake_plant),
     PlantEntity(name = "Pothos", url = R.drawable.img_pothos),
 
-    )
+)
 
 @Composable
 fun HomeScreen() {
@@ -85,14 +84,18 @@ private fun Content(model: BloomModel) {
         val favoriteBorder = Icons.Default.FavoriteBorder
         val accountCircle = Icons.Default.AccountCircle
         val shoppingCart = Icons.Default.ShoppingCart
-        BottomBar(data = listOf(
-            BottomBarData("Home", home),
-            BottomBarData("Favorites", favoriteBorder),
-            BottomBarData("Profile", accountCircle),
-            BottomBarData("Cart", shoppingCart),
+        BottomBar(
+            data = listOf(
+                BottomBarData("Home", home),
+                BottomBarData("Favorites", favoriteBorder),
+                BottomBarData("Profile", accountCircle),
+                BottomBarData("Cart", shoppingCart),
 
-            ), index = 0, onChanged = {
-            currentIndex = it
-        })
+            ),
+            index = 0,
+            onChanged = {
+                currentIndex = it
+            }
+        )
     }
 }

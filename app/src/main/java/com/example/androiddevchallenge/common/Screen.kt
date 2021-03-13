@@ -15,7 +15,7 @@
  */
 package com.example.androiddevchallenge.common
 
-enum class Screen{
+enum class Screen {
     welcome,
     login,
     home,

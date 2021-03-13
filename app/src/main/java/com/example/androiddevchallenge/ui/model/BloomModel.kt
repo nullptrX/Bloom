@@ -20,7 +20,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.androiddevchallenge.common.Screen
-import java.util.*
 
 class BloomModel : ViewModel() {
     companion object {
@@ -33,19 +32,18 @@ class BloomModel : ViewModel() {
     private val queue: ArrayDeque<Screen> = ArrayDeque(listOf(Screen.welcome))
 
     fun push(screen: Screen) {
-        this.queue.push(screen)
+        this.queue.addFirst(screen)
         this.screen = screen
     }
 
     fun pop(): Boolean {
         if (this.queue.isNotEmpty()) {
-            this.queue.pop()
+            this.queue.removeFirst()
         }
         if (this.queue.isNotEmpty()) {
-            this.screen = this.queue.last
+            this.screen = this.queue.first()
             return true
         }
         return false
     }
-
 }

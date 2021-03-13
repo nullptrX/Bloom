@@ -76,13 +76,13 @@ fun BloomApp(window: Window? = null) {
         @Suppress("DEPRECATION")
         if (statusBarColor.luminance() > 0.5f) {
             it.decorView.systemUiVisibility = it.decorView.systemUiVisibility or
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
         @Suppress("DEPRECATION")
         if (statusBarColor.luminance() > 0.5f) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 it.decorView.systemUiVisibility = it.decorView.systemUiVisibility or
-                        View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
             }
         }
     }

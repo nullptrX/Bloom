@@ -18,7 +18,6 @@ package com.example.androiddevchallenge.ui.theme
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.TweenSpec
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
@@ -46,7 +45,6 @@ private val LocalBloomColors = compositionLocalOf {
     LightBloomColors
 }
 
-
 private val LightBloomColors = BloomColors(
     subtitle = gray,
     buttonText1 = white,
@@ -73,7 +71,6 @@ private val DarkBloomColors = BloomColors(
     divider = white,
 )
 
-
 private val LightColorPalette = lightColors(
     primary = pink100,
     secondary = pink900,
@@ -85,7 +82,6 @@ private val LightColorPalette = lightColors(
     onSurface = gray,
 )
 
-
 private val DarkColorPalette = darkColors(
     primary = green900,
     secondary = green300,
@@ -96,7 +92,6 @@ private val DarkColorPalette = darkColors(
     onBackground = white,
     onSurface = white850,
 )
-
 
 @Composable
 fun BloomTheme(
@@ -145,5 +140,4 @@ fun BloomTheme(
             content = content
         )
     }
-
 }
