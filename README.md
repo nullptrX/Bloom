@@ -25,7 +25,7 @@ This is a material design app built in Jetpack Compose
 ## :camera_flash: Screenshots
 
 <!-- You can add more screenshots here if you like -->
-<img src="/results/screenshot_1.jpg" width="260">&emsp;<img src="/results/screenshot_2.jpg" width="260">&emsp;<img src="/results/screenshot_3.jpg" width="260">&emsp;<img src="/results/screenshot_4.jpg" width="260">&emsp;<img src="/results/screenshot_5.jpg" width="260">&emsp;<img src="/results/screenshot_6.jpg" width="260">
+<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">&emsp;<img src="/results/screenshot_3.png" width="260">&emsp;<img src="/results/screenshot_4.png" width="260">&emsp;<img src="/results/screenshot_5.png" width="260">&emsp;<img src="/results/screenshot_6.png" width="260">
 
 ## License
 
