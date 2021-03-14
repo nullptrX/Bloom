@@ -77,7 +77,7 @@ private fun ContentBelow() {
             id = if (MaterialTheme.colors.isLight) R.drawable.ic_light_welcome_bg
             else R.drawable.ic_dark_welcome_bg
         ),
-        contentDescription = null,
+        contentDescription = "",
     )
 }
 
